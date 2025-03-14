@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "catgeory": "misc",
+  "pattern": [
+    "   ",
+    "ABA",
+    "   "
+  ],
+  "key": {
+    "A": {
+      "item": "angelringmod:angel_feather"
+    },
+    "B": {
+      "item": "minecraft:nether_star"
+    }
+  },
+  "result": {
+    "item": "angelringmod:angel_wing"
+  }
+
+}

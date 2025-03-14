@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "catgeory": "misc",
+  "ingredients": [
+    {
+      "item": "minecraft:diamond"
+    },
+    {
+      "item": "minecraft:feather"
+    }
+  ],
+  "result": {
+    "item": "angelringmod:angel_feather"
+  }
+}

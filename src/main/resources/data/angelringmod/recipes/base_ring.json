@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "catgeory": "misc",
+  "pattern": [
+    " A ",
+    "A A",
+    " A "
+  ],
+  "key": {
+    "A": {
+      "item": "minecraft:gold_block"
+    }
+  },
+  "result": {
+    "item": "angelringmod:base_ring"
+  }
+}

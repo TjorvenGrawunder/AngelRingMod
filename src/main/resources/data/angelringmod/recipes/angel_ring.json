@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "catgeory": "misc",
+    "pattern": [
+        "   ",
+        "ABA",
+        "   "
+    ],
+    "key": {
+        "A": {
+            "item": "angelringmod:angel_wing"
+        },
+        "B": {
+            "item": "angelringmod:base_ring"
+        }
+    },
+    "result": {
+        "item": "angelringmod:angel_ring"
+    }
+
+}
