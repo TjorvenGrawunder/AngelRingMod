@@ -2,6 +2,7 @@ package de.tjorven.angelring;
 
 import com.mojang.logging.LogUtils;
 import de.tjorven.angelring.curiosbehaviour.AngelRingBehaviour;
+import de.tjorven.angelring.curiosbehaviour.FireProtectionBehaviour;
 import de.tjorven.angelring.item.ModItems;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.api.distmarker.Dist;
