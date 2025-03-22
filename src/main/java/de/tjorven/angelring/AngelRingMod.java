@@ -1,6 +1,7 @@
 package de.tjorven.angelring;
 
 import com.mojang.logging.LogUtils;
+import de.tjorven.angelring.curiosbehaviour.AngelRingBehaviour;
 import de.tjorven.angelring.item.ModItems;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.api.distmarker.Dist;
@@ -9,11 +10,14 @@ import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
 import net.minecraftforge.event.server.ServerStartingEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.fml.InterModComms;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.slf4j.Logger;
+import top.theillusivec4.curios.api.CuriosApi;
+import top.theillusivec4.curios.api.SlotTypeMessage;
 
 // The value here should match an entry in the META-INF/mods.toml file
 @Mod(AngelRingMod.MODID)
@@ -34,7 +38,7 @@ public class AngelRingMod {
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {
-
+        CuriosApi.registerCurio(ModItems.ANGEL_RING.get(), new AngelRingBehaviour());
     }
 
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
