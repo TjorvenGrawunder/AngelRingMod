@@ -2,6 +2,8 @@ package de.tjorven.angelring;
 
 import com.mojang.logging.LogUtils;
 import de.tjorven.angelring.curiosbehaviour.AngelRingBehaviour;
+import de.tjorven.angelring.curiosbehaviour.FireProtectionBehaviour;
+import de.tjorven.angelring.curiosbehaviour.WaterBreathingBehaviour;
 import de.tjorven.angelring.item.ModItems;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.api.distmarker.Dist;
@@ -37,7 +39,7 @@ public class AngelRingMod {
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {
-        CuriosApi.registerCurio(ModItems.ANGEL_RING.get(), new AngelRingBehaviour());
+        curiosRegistry();
     }
 
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
@@ -46,6 +48,8 @@ public class AngelRingMod {
             event.accept(ModItems.ANGEL_WING);
             event.accept(ModItems.ANGEL_FEATHER);
             event.accept(ModItems.BASE_RING);
+            event.accept(ModItems.FIRE_PROTECTION_NECKLACE);
+            event.accept(ModItems.WATER_GEM);
         }
     }
 
@@ -62,5 +66,11 @@ public class AngelRingMod {
         public static void onClientSetup(FMLClientSetupEvent event) {
 
         }
+    }
+
+    private void curiosRegistry() {
+        CuriosApi.registerCurio(ModItems.ANGEL_RING.get(), new AngelRingBehaviour());
+        CuriosApi.registerCurio(ModItems.WATER_GEM.get(), new WaterBreathingBehaviour());
+        CuriosApi.registerCurio(ModItems.FIRE_PROTECTION_NECKLACE.get(), new FireProtectionBehaviour());
     }
 }

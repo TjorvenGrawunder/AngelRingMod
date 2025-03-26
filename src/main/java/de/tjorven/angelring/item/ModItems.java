@@ -14,6 +14,12 @@ public class ModItems {
     public static final RegistryObject<Item> ANGEL_RING = ITEMS.register("angel_ring",
             () -> new AngelRing(new Item.Properties().stacksTo(1)));
 
+    public static final RegistryObject<Item> FIRE_PROTECTION_NECKLACE = ITEMS.register("fire_necklace",
+            () -> new FireNecklace(new Item.Properties().stacksTo(1)));
+
+    public static final RegistryObject<Item> WATER_GEM = ITEMS.register("water_gem",
+            () -> new WaterGem(new Item.Properties().stacksTo(1)));
+
     public static final RegistryObject<Item> ANGEL_WING = ITEMS.register("angel_wing",
             () -> new Item(new Item.Properties()));
 
