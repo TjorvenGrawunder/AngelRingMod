@@ -1,0 +1,30 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "thermal"
+    }
+  ],
+  "catgeory": "misc",
+    "pattern": [
+        "G G",
+        " G ",
+        "RNR"
+    ],
+    "key": {
+        "G": {
+            "item": "minecraft:gold_block"
+        },
+        "N": {
+            "item": "minecraft:nether_star"
+        },
+        "R": {
+            "item": "thermal:ruby"
+        }
+    },
+    "result": {
+        "item": "angelringmod:fire_necklace"
+    }
+
+}

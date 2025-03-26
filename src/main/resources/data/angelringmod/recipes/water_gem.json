@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "thermal"
+    }
+  ],
+  "catgeory": "misc",
+    "pattern": [
+        "SSS",
+        "SNS",
+        "SSS"
+    ],
+    "key": {
+        "N": {
+            "item": "minecraft:nether_star"
+        },
+        "S": {
+            "item": "thermal:sapphire"
+        }
+    },
+    "result": {
+        "item": "angelringmod:water_gem"
+    }
+
+}
