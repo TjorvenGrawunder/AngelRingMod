@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "catgeory": "misc",
+    "pattern": [
+        "AAA",
+        "ABA",
+        "AAA"
+    ],
+    "key": {
+        "A": {
+            "item": "xycraft_world:xychorium_gem_blue"
+        },
+        "B": {
+            "item": "minecraft:diamond"
+        }
+    },
+    "result": {
+        "item": "thermal:sapphire"
+    }
+
+}
