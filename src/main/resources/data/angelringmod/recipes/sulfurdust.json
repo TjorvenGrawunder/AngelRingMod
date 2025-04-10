@@ -1,0 +1,21 @@
+{
+  "type": "mekanism:crushing",
+  "conditions": [
+    {
+      "type": "forge:mod_loaded",
+      "modid": "mekanism"
+    },
+    {
+      "type": "forge:mod_loaded",
+      "modid": "thermal"
+    }
+  ],
+  "input": {
+    "ingredient": {
+      "item": "thermal:sulfur"
+    }
+  },
+  "output": {
+    "item": "mekanism:dust_sulfur"
+  }
+}
