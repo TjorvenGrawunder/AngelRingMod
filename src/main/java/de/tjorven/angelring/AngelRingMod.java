@@ -1,10 +1,15 @@
 package de.tjorven.angelring;
 
 import com.mojang.logging.LogUtils;
+import de.tjorven.angelring.block.ModBlocks;
 import de.tjorven.angelring.curiosbehaviour.AngelRingBehaviour;
 import de.tjorven.angelring.curiosbehaviour.FireProtectionBehaviour;
 import de.tjorven.angelring.curiosbehaviour.WaterBreathingBehaviour;
+import de.tjorven.angelring.gui.BigCraftingScreen;
+import de.tjorven.angelring.gui.menu.ModMenuTypes;
 import de.tjorven.angelring.item.ModItems;
+import net.minecraft.client.gui.screens.MenuScreens;
+import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
@@ -31,6 +36,7 @@ public class AngelRingMod {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
         ModItems.register(modEventBus);
+        ModBlocks.register(modEventBus);
 
         modEventBus.addListener(this::commonSetup);
 
@@ -50,6 +56,7 @@ public class AngelRingMod {
             event.accept(ModItems.BASE_RING);
             event.accept(ModItems.FIRE_PROTECTION_NECKLACE);
             event.accept(ModItems.WATER_GEM);
+            event.accept(ModBlocks.BIG_CRAFTING_TABLE);
         }
     }
 
@@ -64,7 +71,7 @@ public class AngelRingMod {
     public static class ClientModEvents {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
-
+            MenuScreens.register(ModMenuTypes.CUSTOM_CRAFTING_MENU.get(), BigCraftingScreen::new);
         }
     }
 

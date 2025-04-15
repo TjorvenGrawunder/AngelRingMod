@@ -1,10 +1,8 @@
-package de.tjorven.angelring.menu;
+package de.tjorven.angelring.gui.menu;
 
-import de.tjorven.angelring.block.BigCraftingTable;
 import de.tjorven.angelring.block.ModBlocks;
+import de.tjorven.angelring.block.entity.BigCraftingTableBlockEntity;
 import net.minecraft.network.FriendlyByteBuf;
-import net.minecraft.world.Container;
-import net.minecraft.world.SimpleContainer;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.*;
@@ -17,14 +15,18 @@ public class BigCraftingMenu extends AbstractContainerMenu {
     private final ResultContainer resultContainer = new ResultContainer();
     private final ContainerData containerData;
     private final Level level;
-    private final BlockEntity blockEntity;
+    private final BigCraftingTableBlockEntity blockEntity;
 
-    public BigCraftingMenu(int id, Inventory playerInv, FriendlyByteBuf containerData){
+    public BigCraftingMenu(int id, Inventory playerInv, FriendlyByteBuf data){
+        this(id, playerInv, playerInv.player.level().getBlockEntity(data.readBlockPos()), new SimpleContainerData(100));
+    }
+
+    public BigCraftingMenu(int id, Inventory playerInv, BlockEntity blockEntity, ContainerData containerData) {
         super(ModMenuTypes.CUSTOM_CRAFTING_MENU.get(), id);
         this.containerData = new SimpleContainerData(100);
         this.level = playerInv.player.level();
         this.craftingGrid = new TransientCraftingContainer(this, 10, 10);
-        this. blockEntity = level.getBlockEntity(containerData.readBlockPos());
+        this.blockEntity = (BigCraftingTableBlockEntity) blockEntity;
 
         this.addSlot(new ResultSlot(playerInv.player, craftingGrid, resultContainer, 0, 144, 35));
 

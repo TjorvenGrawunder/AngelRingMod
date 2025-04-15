@@ -1,5 +1,6 @@
 package de.tjorven.angelring.recipetypes;
 
+import de.tjorven.angelring.AngelRingMod;
 import de.tjorven.angelring.jsonhandling.BigCraftingRecipeSerializer;
 import net.minecraft.world.item.crafting.RecipeSerializer;
 import net.minecraft.world.item.crafting.RecipeType;
@@ -8,8 +9,8 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 
 public class ModRecipes {
-    public static final DeferredRegister<RecipeSerializer<?>> SERIALIZERS = DeferredRegister.create(ForgeRegistries.RECIPE_SERIALIZERS, "deinmodid");
-    public static final DeferredRegister<RecipeType<?>> TYPES = DeferredRegister.create(ForgeRegistries.RECIPE_TYPES, "deinmodid");
+    public static final DeferredRegister<RecipeSerializer<?>> SERIALIZERS = DeferredRegister.create(ForgeRegistries.RECIPE_SERIALIZERS, AngelRingMod.MODID);
+    public static final DeferredRegister<RecipeType<?>> TYPES = DeferredRegister.create(ForgeRegistries.RECIPE_TYPES, AngelRingMod.MODID);
 
     public static final RegistryObject<RecipeSerializer<TenXTenCraftingRecipe>> BIG_CRAFTING_SERIALIZER =
             SERIALIZERS.register("custom_crafting", BigCraftingRecipeSerializer::new);
